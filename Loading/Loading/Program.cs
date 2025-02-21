@@ -11,6 +11,8 @@ namespace Loading
     {
         static void Main(string[] args)
         {
+
+
             Console.WriteLine("□□□□□□□□□□");
             Thread.Sleep(1000);
             Console.Clear();
@@ -44,6 +46,8 @@ namespace Loading
             Console.WriteLine("■■■■■■■■■■");
             Console.Clear();
             Console.WriteLine("텍스트엘든링");
+
+            Console.WriteLine("시작한다");
 
         }
     }
