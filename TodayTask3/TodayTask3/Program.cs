@@ -13,7 +13,7 @@ namespace TodayTask3
 
 
 
-            /*// 1. 세 정수의 최댓값 구하기
+            // 1. 세 정수의 최댓값 구하기
 
             int x = 0, y = 0, z = 0;
             int max = 0;
@@ -37,7 +37,7 @@ namespace TodayTask3
                 max = (z > y) ? z : y;
             }
 
-            Console.WriteLine("최대값: " + max);*/
+            Console.WriteLine("최대값: " + max);
 
 
             /*// 2. 점수에 따른 학점 평가
