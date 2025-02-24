@@ -1,7 +1,0 @@
-C:\c#study\LikeLion\LikeLion6\LikeLion6\bin\Debug\LikeLion6.exe.config
-C:\c#study\LikeLion\LikeLion6\LikeLion6\bin\Debug\LikeLion6.exe
-C:\c#study\LikeLion\LikeLion6\LikeLion6\bin\Debug\LikeLion6.pdb
-C:\c#study\LikeLion\LikeLion6\LikeLion6\obj\Debug\LikeLion6.csproj.AssemblyReference.cache
-C:\c#study\LikeLion\LikeLion6\LikeLion6\obj\Debug\LikeLion6.csproj.CoreCompileInputs.cache
-C:\c#study\LikeLion\LikeLion6\LikeLion6\obj\Debug\LikeLion6.exe
-C:\c#study\LikeLion\LikeLion6\LikeLion6\obj\Debug\LikeLion6.pdb

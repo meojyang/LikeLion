@@ -1,7 +1,0 @@
-C:\c#study\LikeLion\LikeLion8\LikeLion8\bin\Debug\LikeLion8.exe.config
-C:\c#study\LikeLion\LikeLion8\LikeLion8\bin\Debug\LikeLion8.exe
-C:\c#study\LikeLion\LikeLion8\LikeLion8\bin\Debug\LikeLion8.pdb
-C:\c#study\LikeLion\LikeLion8\LikeLion8\obj\Debug\LikeLion8.csproj.AssemblyReference.cache
-C:\c#study\LikeLion\LikeLion8\LikeLion8\obj\Debug\LikeLion8.csproj.CoreCompileInputs.cache
-C:\c#study\LikeLion\LikeLion8\LikeLion8\obj\Debug\LikeLion8.exe
-C:\c#study\LikeLion\LikeLion8\LikeLion8\obj\Debug\LikeLion8.pdb

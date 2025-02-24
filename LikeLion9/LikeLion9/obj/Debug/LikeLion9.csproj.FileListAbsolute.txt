@@ -1,7 +1,0 @@
-C:\c#study\LikeLion\LikeLion9\LikeLion9\bin\Debug\LikeLion9.exe.config
-C:\c#study\LikeLion\LikeLion9\LikeLion9\bin\Debug\LikeLion9.exe
-C:\c#study\LikeLion\LikeLion9\LikeLion9\bin\Debug\LikeLion9.pdb
-C:\c#study\LikeLion\LikeLion9\LikeLion9\obj\Debug\LikeLion9.csproj.AssemblyReference.cache
-C:\c#study\LikeLion\LikeLion9\LikeLion9\obj\Debug\LikeLion9.csproj.CoreCompileInputs.cache
-C:\c#study\LikeLion\LikeLion9\LikeLion9\obj\Debug\LikeLion9.exe
-C:\c#study\LikeLion\LikeLion9\LikeLion9\obj\Debug\LikeLion9.pdb
