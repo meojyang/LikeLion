@@ -11,10 +11,10 @@ namespace TodayTask3
         static void Main(string[] args)
         {
 
-            /*
-            
-            // 1. 세 정수의 최댓값 구하기
-           
+
+
+            /*// 1. 세 정수의 최댓값 구하기
+
             int x = 0, y = 0, z = 0;
             int max = 0;
             Console.Write("첫번째 정수를 입력해주세요: ");
@@ -28,48 +28,49 @@ namespace TodayTask3
             {
                 max = (x > z) ? x : z;
             }
-            else if(y > x)
+            else if (y > x)
             {
                 max = (y > z) ? y : z;
             }
-            else if(z > x)
+            else if (z > x)
             {
                 max = (z > y) ? z : y;
             }
 
             Console.WriteLine("최대값: " + max);*/
 
-            /* // 2. 점수에 따른 학점 평가
 
-             int score;
-             Console.Write("점수를 입력해주세요: ");
-             score = int.Parse(Console.ReadLine());
+            /*// 2. 점수에 따른 학점 평가
 
-
-             if(score >= 90)
-             {
-                 Console.WriteLine("A 학점");
-
-             }
-             else if(score >= 80)
-             {
-                 Console.WriteLine("B 학점");
-             }
-             else if (score >= 70)
-             {
-                 Console.WriteLine("C 학점");
-             }
-             else if (score >= 60)
-             {
-                 Console.WriteLine("D 학점");
-             }
-             else
-             {
-                 Console.WriteLine("F 학점");
-             }*/
+            int score;
+            Console.Write("점수를 입력해주세요: ");
+            score = int.Parse(Console.ReadLine());
 
 
-           /* // 3. 간단한 사칙연산 계산기
+            if (score >= 90)
+            {
+                Console.WriteLine("A 학점");
+
+            }
+            else if (score >= 80)
+            {
+                Console.WriteLine("B 학점");
+            }
+            else if (score >= 70)
+            {
+                Console.WriteLine("C 학점");
+            }
+            else if (score >= 60)
+            {
+                Console.WriteLine("D 학점");
+            }
+            else
+            {
+                Console.WriteLine("F 학점");
+            }*/
+
+
+            /*// 3. 간단한 사칙연산 계산기
 
             int x = 0, y = 0;
             int result = 0;
@@ -82,7 +83,7 @@ namespace TodayTask3
             Console.Write("연산 기호를 입력해주세요. (+,-,*,/ 중 하나): ");
             mark = Console.ReadLine();
 
-            if(mark.Equals("+"))
+            if (mark.Equals("+"))
             {
                 result = x + y;
             }
@@ -106,8 +107,8 @@ namespace TodayTask3
                 }
             }
 
-            Console.WriteLine("결과: " + result);
-            */
+            Console.WriteLine("결과: " + result);*/
+
         }
     }
 }
