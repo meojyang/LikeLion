@@ -584,3 +584,4 @@ FodyWeavers.xsd
 DocumentLayout.backup.json
 DocumentLayout.json
 
+*.json
