@@ -581,9 +581,6 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,csharp
-TodayTask1/.vs/TodayTask1/v17/DocumentLayout.backup.json
-TodayTask1/.vs/TodayTask1/v17/.suo
-TodayTask1/.vs/TodayTask1/v17/DocumentLayout.backup.json
-TodayTask1/.vs/TodayTask1/v17/DocumentLayout.backup.json
-TodayTask1/.vs/TodayTask1/v17/DocumentLayout.backup.json
-TodayTask1/.vs/TodayTask1/v17/DocumentLayout.json
+DocumentLayout.backup.json
+DocumentLayout.json
+
