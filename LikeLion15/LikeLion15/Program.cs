@@ -14,7 +14,8 @@ namespace dev1
     {
         public static void SayHello()
         {
-            Console.WriteLine("안녕하세요! dev1의 MyClass입니다.");
+            //Console.WriteLine("안녕하세요! dev1의 MyClass입니다.");
+
         }
     }
 }
@@ -25,9 +26,17 @@ namespace LikeLion15
     {
         static void Main(string[] args)
         {
-            dev1.MyClass.SayHello();
-            SayHello();
+            /* dev1.MyClass.SayHello();
+             SayHello();*/
+
+            //C#화살표 함수
+            //람다 표현식이라고도 하며
+            //함수를 간단하게 정의할 수 있다.
+
+
         }
+
+        static int AddArrow(int a, int b) => a + b; //화살표 함수
 
         static void SayHello()
         {
