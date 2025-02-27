@@ -90,13 +90,12 @@ namespace ShootingGame1
                     
                     prevSecond = currentSecond; //이전 시간 업데이트
 
-                    Console.Clear();
+                    Console.Clear(); //다음 장면을 그리기 위해 지워줘야함
 
                     keyInfo = Console.ReadKey(true);
 
-
-                    p1.Move(keyInfo.Key);
-                    p1.Draw();
+                    p1.Move(keyInfo.Key); //움직임을 입력받고
+                    p1.Draw(); // 플레이어의 현재 위치를 따라 화면에 그려준다
                 }
             }
         }
