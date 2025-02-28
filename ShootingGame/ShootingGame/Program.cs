@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ShootingGame
 {
 
-    
+
     //발사될 미사일부터 만들자
     public class BULLET
     {
@@ -41,7 +41,7 @@ namespace ShootingGame
         public int Score = 100;
         public Item item = new Item();
         public int itemCount = 0;
-        
+
 
         public Player()
         {
@@ -71,7 +71,7 @@ namespace ShootingGame
 
         public void GameMain()
         {
-            
+
             //키를 입력받는 부분
             KeyControl();
             //플레이어를 그려준다
@@ -97,10 +97,10 @@ namespace ShootingGame
             }; //문자열 배열로 플레이어 그리기
 
 
-            for(int i = 0; i <player.Length; i++)
+            for (int i = 0; i < player.Length; i++)
             {
                 //콘솔좌표를 이용해 플레이어 위치를 설정
-                Console.SetCursorPosition(playerX, playerY+i);
+                Console.SetCursorPosition(playerX, playerY + i);
                 //문자열배열 출력
                 Console.WriteLine(player[i]);
 
@@ -114,41 +114,41 @@ namespace ShootingGame
             if (Console.KeyAvailable)
             {
                 pressKey = _getch(); //아스키코드표에서 왼쪽 오른쪽
-                
+
 
                 switch (pressKey)
                 {
                     case UPKEY: //위족 방향 화살표
-                    {
+                        {
                             playerY--;
                             if (playerY < 1)
                                 playerY = 1; //화면상에서 좌표가 1보다 작으면 1로 고정을 해줄거
                             break;
-                    }
+                        }
                     case LEFTKEY: //왼쪽 화살표키
-                     {
+                        {
                             playerX--;
                             if (playerX < 0)
                                 playerX = 1;
                             break;
-                     }
+                        }
                     case RIGHTKEY: //오른쪽 화살표키
-                     {
+                        {
                             playerX++;
                             if (playerX > 75)
                                 playerX = 75;
                             break;
-                     }
+                        }
                     case DOWNKEY: //아래 화살표키
-                     {
+                        {
                             playerY++;
                             if (playerY > 21)
                                 playerY = 21;
                             break;
-                     }
+                        }
                     case SPACEBAR: //스페이스바
-                     {
-                            for(int i = 0; i < 20; i++)
+                        {
+                            for (int i = 0; i < 20; i++)
                             {
                                 if (playerBullet[i].fire == false)
                                 {
@@ -157,7 +157,7 @@ namespace ShootingGame
                                     //좌표를 플레이어 앞쪽으로 설정해줘야함
                                     playerBullet[i].bulletX = playerX + 5;
                                     playerBullet[i].bulletY = playerY + 1;
-                                    
+
                                     //한발씩 쏠거니까 한발 쏘고나면 브레이크
                                     break;
                                 }
@@ -171,7 +171,7 @@ namespace ShootingGame
                                     //플레이어 앞에서 미사일이 나가야 하기 때문에
                                     //좌표를 플레이어 앞쪽으로 설정해줘야함
                                     playerBullet2[i].bulletX = playerX + 5;
-                                    playerBullet2[i].bulletY = playerY;
+                                    playerBullet2[i].bulletY = playerY; // 기존 미사일보다 한칸 위에 나와야함
 
                                     //한발씩 쏠거니까 한발 쏘고나면 브레이크
                                     break;
@@ -186,16 +186,16 @@ namespace ShootingGame
                                     //플레이어 앞에서 미사일이 나가야 하기 때문에
                                     //좌표를 플레이어 앞쪽으로 설정해줘야함
                                     playerBullet3[i].bulletX = playerX + 5;
-                                    playerBullet3[i].bulletY = playerY + 2;
+                                    playerBullet3[i].bulletY = playerY + 2; //기존 미사일보다 한칸 아래에 나와야함
 
                                     //한발씩 쏠거니까 한발 쏘고나면 브레이크
                                     break;
                                 }
                             }
                             break;
-                     }
+                        }
 
-                 
+
                 }
             }
         }
@@ -205,7 +205,7 @@ namespace ShootingGame
             string bullet = "->";
 
             //미사일은 20개니까
-            for(int i = 0; i < 20; i++)
+            for (int i = 0; i < 20; i++)
             {
                 if (playerBullet[i].fire == true)
                 {
@@ -272,7 +272,7 @@ namespace ShootingGame
         public void ClashEnemyAndBullet(Enemy enemy)
         {
             //미사일 20개와 전부 비교를 해야함;;
-            for(int i = 0; i < 20; i++)
+            for (int i = 0; i < 20; i++)
             {
                 if (playerBullet[i].fire == true)
                 {
@@ -280,12 +280,15 @@ namespace ShootingGame
                     if (playerBullet[i].bulletY == enemy.enemyY)
                     {
                         if (playerBullet[i].bulletX >= (enemy.enemyX - 1) &&
-                            playerBullet[i].bulletX <= (enemy.enemyX+1))
+                            playerBullet[i].bulletX <= (enemy.enemyX + 1))
                         {
+                            enemy.EnemyExplode();
 
-                            item.ItemLife = true;
-                            item.ItemX = enemy.enemyX;
-                            item.ItemY = enemy.enemyY;
+                            item.ItemLife = true; //총알과 적이 충돌하면 아이템이 생성된다.
+                            item.ItemX = enemy.enemyX; //아이템이 생성될 X좌표
+                            item.ItemY = enemy.enemyY; //아이템이 생성될 Y좌표
+                            item.ItemMove(); //그 아이템은 생성되고 움직인다
+
                             //충돌할경우
                             //다시 적을 만들어줌
                             Random rand = new Random();
@@ -311,10 +314,12 @@ namespace ShootingGame
                         if (playerBullet2[i].bulletX >= (enemy.enemyX - 1) &&
                             playerBullet2[i].bulletX <= (enemy.enemyX + 1))
                         {
-                            
+                            enemy.EnemyExplode();
+
+                            item.ItemLife = true;
                             item.ItemX = enemy.enemyX;
                             item.ItemY = enemy.enemyY;
-                            
+                            item.ItemMove();
 
                             //충돌할경우
                             //다시 적을 만들어줌
@@ -341,7 +346,13 @@ namespace ShootingGame
                         if (playerBullet3[i].bulletX >= (enemy.enemyX - 1) &&
                             playerBullet3[i].bulletX <= (enemy.enemyX + 1))
                         {
-                            
+                            enemy.EnemyExplode();
+
+                            item.ItemLife = true;
+                            item.ItemX = enemy.enemyX;
+                            item.ItemY = enemy.enemyY;
+                            item.ItemMove();
+
                             //충돌할경우
                             //다시 적을 만들어줌
                             Random rand = new Random();
@@ -375,16 +386,16 @@ namespace ShootingGame
 
         public void CrashItem()
         {
-            if(playerY+1 == item.ItemY)
+            if (playerY + 1 == item.ItemY)
             {
-                if(playerX >= item.ItemX -2 && playerX <= item.ItemX + 2)
+                if (playerX >= item.ItemX - 2 && playerX <= item.ItemX + 2)
                 {
                     item.ItemLife = false; //먹었으니 아이템 없애주고
 
-                    if(itemCount < 3) //3개 보다 적으면
+                    if (itemCount < 3) //3개 보다 적으면
                         itemCount++; //아이템 갯수 먹은거 한개 늘려주고
 
-                    for(int i = 0; i <20; i++)
+                    for (int i = 0; i < 20; i++)
                     {
                         playerBullet[i] = new BULLET();
                         playerBullet[i].bulletX = 0;
@@ -431,14 +442,19 @@ namespace ShootingGame
             Random rand = new Random();
             enemyX--; //그냥 단순하게 왼쪽으로 움직여
 
-            if(enemyX < 2) //화면 왼쪽 끝까지 가게 되면 새 적이 나와야하니까
+            if (enemyX < 2) //화면 왼쪽 끝까지 가게 되면 새 적이 나와야하니까
             {
                 enemyX = 77;
                 enemyY = rand.Next(2, 22); //2~21 사이에서만 나오게
             }
         }
 
-
+        public void EnemyExplode()
+        {
+            String explodeEffect = "※";
+            Console.SetCursorPosition(enemyX, enemyY);
+            Console.Write(explodeEffect);
+        }
     }
 
     public class Item
@@ -448,20 +464,39 @@ namespace ShootingGame
         public int ItemX = 0;
         public int ItemY = 0;
         public bool ItemLife = false;
+        public bool ItemUpDown = true;
+
 
         public void ItemDraw()
         {
             Console.SetCursorPosition(ItemX, ItemY);
-            ItemSprite = "Item★";
+            ItemSprite = "|>[P]D";
             Console.Write(ItemSprite);
         }
 
         public void ItemMove()
         {
-           /* if(ItemX <= 1 || ItemY <= 1)
+            if (ItemX <= 1) //아이템이 화면 왼쪽 끝에 가면
             {
-                ItemLife = false;
-            }*/
+                ItemLife = false; //아이템이 사라지게
+            }
+
+            ItemX--; //일단 왼쪽으로 움직여야함
+
+            if (ItemUpDown)
+            {
+                if (ItemY < 3)
+                    ItemUpDown = false;
+                ItemY--;
+
+            }
+            else
+            {
+                if (ItemY > 20)
+                    ItemUpDown = true;
+                ItemY++;
+            }
+
         }
     }
 
@@ -496,11 +531,11 @@ namespace ShootingGame
                     //플레이어
                     player.GameMain();
 
-                    if(player.itemCount == 0)
+                    if (player.itemCount == 0)
                     {
                         player.BulletDraw();
                     }
-                    else if(player.itemCount == 1)
+                    else if (player.itemCount == 1)
                     {
                         player.BulletDraw();
                         player.BulletDraw2();
@@ -517,12 +552,11 @@ namespace ShootingGame
 
                     //총알과 적이 충돌하는것을 처리하는 부분
                     player.ClashEnemyAndBullet(enemy);
+
                 }
 
 
             }
-
-
         }
     }
 }
