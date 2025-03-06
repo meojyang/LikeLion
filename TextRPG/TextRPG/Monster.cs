@@ -7,21 +7,16 @@ using System.Threading.Tasks;
 
 namespace TextRPG
 {
-    public class Monster
+    public class Monster : Unit
     {
-        public INFO m_tMonster; 
-
-        public void SetDamage(int iAttack) { m_tMonster.iHp -= iAttack; }
-
-        public void SetMonster(INFO tMonster) { m_tMonster = tMonster; }
-
-        public INFO GetMonster() { return m_tMonster; }
-
-        public void Render()
+                        
+        public void SetMonster(INFO tMonster) { info = tMonster; }
+               
+        public override void Render()
         {
             Console.WriteLine("==================================");
-            Console.WriteLine("몬스터 이름: " + m_tMonster.strName);
-            Console.WriteLine("체력: " + m_tMonster.iHp + "\t공격력 : " + m_tMonster.iAttack);
+            Console.WriteLine("몬스터 이름: " + info.strName);
+            Console.WriteLine("체력: " + info.iHp + "\t공격력 : " + info.iAttack);
         }
 
         public Monster() { }

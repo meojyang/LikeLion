@@ -113,16 +113,16 @@ namespace TextRPG
                 if(iInput == 1)
                 {
                     //플레이어가 데미지를 주고 몬스터도 데미지를 줘야함
-                    m_pPlayer.SetDamage(monster.GetMonster().iAttack);
+                    m_pPlayer.SetDamage(monster.GetInfo().iAttack);
                     monster.SetDamage(m_pPlayer.GetInfo().iAttack);
 
                     if(m_pPlayer.GetInfo().iHp <= 0) //죽으면
                     {
-                        m_pPlayer.SetHp(100); //부활시켜줌
+                        m_pPlayer.SetHp(100); //그 게임 끝내고 부활시켜줌
                         break;
                     }
                 }
-                if(iInput == 2 || monster.GetMonster().iHp <= 0)
+                if(iInput == 2 || monster.GetInfo().iHp <= 0)
                 {
                     monster = null;
                     break;
