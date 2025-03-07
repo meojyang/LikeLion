@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BrickGame
 {
-    class Program
+    public class Program
     {
         [DllImport("msvcrt.dll")]
 
-        public static extern int __getch(); //c언어 함수 가져옴
+        public static extern int _getch(); //c언어 함수 가져옴
 
         public static void gotoxy(int x, int y)
         {

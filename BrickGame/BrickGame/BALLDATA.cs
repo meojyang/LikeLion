@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BrickGame
 {
-    class BALLDATA
+    public class BALLDATA
     {
 
         public int nReady; //공 움직일 상태

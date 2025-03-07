@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BrickGame
 {
-    class Ball
+    public class Ball
     {
         BALLDATA m_tBall = new BALLDATA();
 
@@ -24,6 +24,9 @@ namespace BrickGame
         //방향은 시계방향으로 정의해놨는데 벽은 시계방향이 아니라서 헷갈리네요
 
         //움직일 bar
+        Bar m_pBar;
+        public void SetBar(Bar bar) { m_pBar = bar; }
+        //여기에 넣어놓고 필요하면 쓰겠다
         //block
 
         public void ScreenWall()
@@ -102,7 +105,36 @@ namespace BrickGame
             {
                 m_tBall.nDirect = g_WallCollision[3, m_tBall.nDirect];
                 return 0; //공의 방향이 바뀌니
+            }
 
+            if (x >= m_pBar.m_tBar.nX[0] && x <= m_pBar.m_tBar.nX[2] + 1 &&
+     y == (m_pBar.m_tBar.nY)) //바 위 충돌
+            {
+                if (m_tBall.nDirect == 1)
+                    m_tBall.nDirect = 2;
+                else if (m_tBall.nDirect == 2)
+                    m_tBall.nDirect = 1;
+                else if (m_tBall.nDirect == 5)
+                    m_tBall.nDirect = 4;
+                else if (m_tBall.nDirect == 4)
+                    m_tBall.nDirect = 5;
+
+                return 1; //방향이 바뀐다.
+            }
+
+            if (x >= m_pBar.m_tBar.nX[0] && x <= m_pBar.m_tBar.nX[2] + 1 &&
+              y == (m_pBar.m_tBar.nY + 1)) //바 아래 충돌
+            {
+                if (m_tBall.nDirect == 1)
+                    m_tBall.nDirect = 2;
+                else if (m_tBall.nDirect == 2)
+                    m_tBall.nDirect = 1;
+                else if (m_tBall.nDirect == 5)
+                    m_tBall.nDirect = 4;
+                else if (m_tBall.nDirect == 4)
+                    m_tBall.nDirect = 5;
+
+                return 1; //방향이 바뀐다.
             }
 
             return 1;
