@@ -10,6 +10,7 @@ namespace BrickGame
     {
         Ball m_pBall = null;
         Bar m_pBar = null;
+        Block[] m_Block = new Block[10];
 
         public void Initialize()
         {
@@ -29,14 +30,24 @@ namespace BrickGame
             }
 
             m_pBall.SetBar(m_pBar);
+            
 
+            //블럭 생성
+            for (int i = 0; i < 10; i++)
+            {
+                m_Block[i] = new Block();
+                m_Block[i].Initialize();
+               
+            }
+
+            m_pBall.SetBlock(m_Block);
 
         }
 
         public void Progress()
         {
             m_pBall.Progress();
-            m_pBar.Progress(ref m_pBall);
+            m_pBar.Progress(ref m_pBall);            
         }
 
         public void Render()
@@ -44,12 +55,20 @@ namespace BrickGame
             Console.Clear();
             m_pBall.Render();
             m_pBar.Render();
+            
+            for(int i = 0; i < 10; i++)
+            {
+                if (m_Block[i] != null)
+                    m_Block[i].Render();
+            }
+            
         }
 
         public void Release()
         {
             m_pBall.Release();
             m_pBar.Release();
+
         }
 
     }
