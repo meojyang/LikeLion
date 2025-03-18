@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LikeLion34
 {
-    class Parent
+    /*class Parent
     {
         protected string name;
 
@@ -34,7 +34,7 @@ namespace LikeLion34
             Console.WriteLine($"이름: {name}, 나이: {age}");
         }
 
-    }
+    }*/
 
 
 
@@ -42,8 +42,9 @@ namespace LikeLion34
     {
         static void Main(string[] args)
         {
-            Child child = new Child("홍길동", 23);
-            child.ShowInfo();
+            Console.WriteLine(Convert.ToInt32("3"));
         }
     }
 }
+
+
